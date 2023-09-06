@@ -39,7 +39,71 @@ if (symbol == 24)											//如果是整数
 ## 报错模块的设计
 ---
 *	在报错模块的设计过程中，需要考虑多种不同的报错类型及其处理机制。下面的程序，列出了常见的报错类型：
-
+```C
+void error(int flag)
+{
+	error_count++;
+	switch (flag)
+	{
+	case 0:cout << "program is error" << endl; break;
+	case 1:cout << "constant_description is error" << endl; break;
+	case 2:cout << "variable_description is error" << endl; break;
+	case 3:cout << "return_value_function_definition is error" << endl; break;
+	case 4:cout << "no_return_value_function_definition is error" << endl; break;
+	case 5:cout << "common2_function is error" << endl; break;
+	case 6:cout << "comma_function is error" << endl; break;
+	case 7:cout << "fu_he_statement is error" << endl; break;
+	case 8:cout << "statement is error" << endl; break;
+	case 9:cout << "expression is error" << endl; break;
+	case 10:cout << "wu_fu_hao_digital is error" << endl; break;
+	case 11:cout << "item is error" << endl; break;
+	case 12:cout << "factor is error" << endl; break;
+	case 13:cout << "const not followed int|float|char " << endl; break;
+	case 14:cout << "缺少标识符" << endl; break;
+	case 15:cout << "缺少等于号" << endl; break;
+	case 16:cout << "等于号右边不匹配" << endl; break;
+	case 17:cout << "结尾处不是分号或者返回值用错地方" << endl; break;
+	case 18:cout << "缺少单引号" << endl; break;
+	case 19:cout << "不满足匹配字符条件" << endl; break;
+	case 20:cout << "类型不匹配,极可能缺少参数" << endl; break;
+	case 21:cout << "结尾处不是右圆括号" << endl; break;
+	case 22:cout << "数组总大小出错" << endl; break;
+	case 23:cout << "结尾处不是右方括号" << endl; break;
+	case 24:cout << "缺少左圆括号" << endl; break;
+	case 25:cout << "缺少双引号" << endl; break;
+	case 26:cout << "不是加法运算符(+|-)" << endl; break;
+	case 27:cout << "缺少左大括号" << endl; break;
+	case 28:cout << "缺少case" << endl; break;
+	case 29:cout << "缺少冒号" << endl; break;
+	case 30:cout << "右大括号不匹配" << endl; break;
+	case 31:cout << "符号表中没有找到需要用到的元素" << endl; break;
+	case 32:cout << "有返回值函数不满足对应左圆括号条件" << endl; break;
+	case 33:cout << "应为左方括号" << endl; break;
+	case 34:cout << "无效标识符" << endl; break;
+	case 35:cout << "0不允许作为数组的上限值" << endl; break;
+	case 36:cout << "此处应为关系运算符" << endl; break;
+	case 37:cout << "必须是int|float|char|void" << endl; break;
+	case 38:cout << "类型不是ident|main" << endl; break;
+	case 39:cout << "文件为空" << endl; break;
+	case 40:cout << "赋值语句类型左右不匹配" << endl; break;
+	case 41:cout << "switch - case类型不匹配" << endl; break;
+	case 42:cout << "switch-case语句，条件类型不是int|char" << endl; break;
+	case 43:cout << "case 语句条件元素重新定义" << endl; break;
+	case 44:cout << "数组元素不是整型" << endl; break;
+	case 45:cout << "符号表中出现重复元素，给予报错处理" << endl; break;
+	case 46:cout << "条件表达式必须为整型" << endl; break;
+	case 47:cout << "缺少return语句" << endl; break;
+	case 48:cout << "有返回值函数缺少return（x）" << endl; break;
+	case 49:cout << "无返回值函数缺少return；" << endl; break;
+	case 50:cout << "数组超过上限值" << endl; break;
+	case 51:cout << "条件判断不能是char类型" << endl; break;
+	case 52:cout << "条件左右类型不匹配" << endl; break;
+	case 53:cout << "缺少可枚举变量" << endl; break;
+	case 100:cout << "文件已经读取完毕" << endl; break;
+	}
+	//return 1;
+}
+```
 ## 解释器的设计
 ---
 
