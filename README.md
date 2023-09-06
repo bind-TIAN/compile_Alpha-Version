@@ -118,4 +118,30 @@ error(20);
 ```
 ## 解释器的设计
 ---
+### 加减乘除
+```C
+case 10://ADD	加减乘除指令通：需要栈顶与次栈顶元素运算，同时使用完毕后，需要把栈顶元素清空
+			run[run_item - 2] = run[run_item - 1] + run[run_item - 2];
+			run_item = run_item - 1;
+			run[run_item] = 0;
+			break;
+
+		case 11://SUB	
+			run[run_item - 2] = run[run_item - 2] - run[run_item - 1];
+			run_item = run_item - 1;
+			run[run_item] = 0;
+			break;
+
+		case 13://MUL
+			run[run_item - 2] = run[run_item - 2] * run[run_item - 1];
+			run_item = run_item - 1;
+			run[run_item] = 0;
+			break;
+
+		case 14://DIV
+			run[run_item - 2] = run[run_item - 2] / run[run_item - 1];
+			run_item = run_item - 1;
+			run[run_item] = 0;
+			break;
+```
 
