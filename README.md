@@ -144,4 +144,13 @@ case 14://DIV
     run[run_item] = 0;
     break;
 ```
-
+### 函数调用指令如：CAL
+```C
+case 23://CAL	函数调用指令
+    a = run_item;
+    X_a[X_item++] = a;//把运行栈的当前下标放进一个暂存数组中
+    run[run_item + 1] = p_list[i].lev;
+    run_item = run_item + 2;
+    break;
+```
+通过访问符号表中的`lev`参数，来确定当前程序运行的在`第几层`，从而实现C0文法语言中关于函数`调用代码`的解析过程。
